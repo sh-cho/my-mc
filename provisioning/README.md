@@ -36,4 +36,5 @@ TBD
 
 - App engine docs: https://cloud.google.com/appengine/docs/flexible
   - testing and deploying: https://cloud.google.com/appengine/docs/flexible/testing-and-deploying-your-app?tab=custom#top
+  - app.yaml: https://cloud.google.com/appengine/docs/flexible/reference/app-yaml?tab=custom
 - `gcloud app deploy` docs: https://cloud.google.com/sdk/gcloud/reference/app/deploy
