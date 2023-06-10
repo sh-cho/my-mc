@@ -1,0 +1,12 @@
+---
+- name: Setup minecraft server env
+  hosts: all
+  become: true
+  tasks:
+    # TODO: arch?
+    - name: Install jdk17
+      ansible.builtin.dnf:
+        name: java-17-openjdk-devel
+        state: present
+      when:
+        - ansible_distribution == "Rocky"

@@ -1,32 +1,43 @@
 ## provisioning
 
+WIP
+
 ### environment
 
-- papermc docker image: https://hub.docker.com/r/marctv/minecraft-papermc-server
-- GCP app engine
+- GCP VM (x86_64)
+  - Rocky linux 8.7
+- OCI VM (arm64)
+  - Rocky linux 9.1
+- PaperMC
+- Ansible
+- (TODO) packer
 - (TODO) terraform
 
-### How to deploy
+#### Pre-requisites
+
+```bash
+brew install pyenv
+pyenv install 3.10.7
+pyenv local 3.10.7
+pip install ansible ansible-lint
+```
+Setup ansible
+
+### Instruction
 
 > **Note**
 >
-> CWD: `/app`
+> CWD: `/provisioning/ansible`
+
+#### Setup server
 
 ```bash
-gcloud auth login
-gcloud config set project $PROJECT_ID
+ansible-playbook -i inventory.ini setup.yml
 ```
-login and select project
 
-```bash
-gcloud projects list
-```
-(list projects)
+#### Deploy app
 
-```bash
-gcloud app deploy
-```
-Deploy
+TBD
 
 #### Test locally
 
